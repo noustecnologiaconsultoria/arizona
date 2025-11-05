@@ -1,116 +1,120 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Painéis de Produção - Arizona Solados</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      font-family: "Segoe UI", Arial, sans-serif;
-    }
+<style>
+  * {
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+  }
 
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      background: linear-gradient(135deg, #004d40, #00796b);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-    }
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #004d40, #00796b);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color: #fff;
+  }
 
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 18px;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
-    }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    text-align: center;
+  }
 
-    header img {
-      height: 70px;
-      width: auto;
-      object-fit: contain;
-    }
+  header img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+  }
 
-    header h1 {
-      font-size: 2.1rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      text-align: center;
-    }
+  header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
 
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    width: 80%;
+    max-width: 1000px;
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 18px;
+    text-align: center;
+    padding: 35px 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+  }
+
+  .card h2 {
+    font-size: 1.4rem;
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .footer {
+    margin-top: 60px;
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    text-align: center;
+    width: 100%;
+  }
+
+  @media (max-width: 900px) {
     .grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 25px;
-      width: 80%;
-      max-width: 1000px;
+      grid-template-columns: repeat(2, 1fr);
     }
-
-    .card {
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 18px;
-      text-align: center;
-      padding: 35px 15px;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      text-decoration: none;
-      color: #fff;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    header img {
+      height: 60px;
     }
-
-    .card:hover {
-      transform: translateY(-6px);
-      background: rgba(255, 255, 255, 0.18);
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    header h1 {
+      font-size: 1.7rem;
     }
+  }
 
-    .card h2 {
-      font-size: 1.4rem;
-      margin: 0;
-      font-weight: 500;
+  @media (max-width: 600px) {
+    .grid {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 20px;
+      width: 90%;
     }
-
+    header {
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+    header img {
+      height: 55px;
+    }
+    header h1 {
+      font-size: 1.5rem;
+    }
     .footer {
-      position: absolute;
-      bottom: 15px;
-      font-size: 0.9rem;
-      opacity: 0.8;
-      text-align: center;
-      width: 100%;
+      margin-top: 40px;
     }
+  }
+</style>
 
-    @media (max-width: 900px) {
-      .grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      header img {
-        height: 60px;
-      }
-      header h1 {
-        font-size: 1.8rem;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .grid {
-        grid-template-columns: repeat(1, 1fr);
-      }
-      header img {
-        height: 55px;
-      }
-      header h1 {
-        font-size: 1.6rem;
-      }
-    }
-  </style>
-</head>
 <body>
 
   <header>
@@ -134,8 +138,7 @@
   </div>
 
   <div class="footer">
-    © Nous Consultoria • Atualizado automaticamente
+    © Nous Tecnologia e Consultoria • Atualizado automaticamente
   </div>
 
 </body>
-</html>
