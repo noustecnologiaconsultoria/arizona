@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="3600"> <!-- fallback: recarrega total a cada 60 min -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Power BI - Acabamento</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background-color: #000;
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+<iframe 
+  src="https://app.powerbi.com/reportEmbed?reportId=24f1eb20-dcbd-4847-bb99-3699d76c2a3d&autoAuth=true&ctid=020fe90c-bfec-43f0-9548-6fca795282a7&pageName=a5018763ce1e681e076e&refresh=1" 
+  allowFullScreen="true">
+</iframe>
+
+
+<script>
+    const iframe = document.querySelector("iframe");
+    const REFRESH_INTERVAL_MS = 10 * 30 * 1000; // 5 minutos
+
+    setInterval(() => {
+      const src = iframe.src.split("?")[0];
+      const params = new URLSearchParams(iframe.src.split("?")[1] || "");
+      params.set("t", Date.now());
+      iframe.src = `${src}?${params.toString()}`;
+    }, REFRESH_INTERVAL_MS);
+  </script>
+</body>
+</html>
