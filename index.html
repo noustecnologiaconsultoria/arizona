@@ -1,8 +1,5 @@
 <style>
-  * {
-    box-sizing: border-box;
-    font-family: "Segoe UI", Arial, sans-serif;
-  }
+  * { box-sizing: border-box; font-family: "Segoe UI", Arial, sans-serif; }
 
   body {
     margin: 0;
@@ -12,7 +9,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
     color: #fff;
   }
 
@@ -48,16 +44,18 @@
   }
 
   .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
     background: rgba(255, 255, 255, 0.12);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 18px;
-    text-align: center;
     padding: 35px 15px;
     transition: all 0.3s ease;
-    cursor: pointer;
-    text-decoration: none;
-    color: #fff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
   }
 
   .card:hover {
@@ -72,9 +70,18 @@
     font-weight: 500;
   }
 
+  .section {
+    margin-bottom: 22px;
+  }
+
+  .section.compact {
+    margin-top: 8px;
+  }
+
+  /* Footer sempre no rodapé */
   .footer {
-    margin-top: 60px;
-    margin-bottom: 25px;
+    margin-top: auto; /* empurra para o final */
+    padding: 20px 0;
     font-size: 0.9rem;
     opacity: 0.8;
     text-align: center;
@@ -95,7 +102,7 @@
 
   @media (max-width: 600px) {
     .grid {
-      grid-template-columns: repeat(1, 1fr);
+      grid-template-columns: 1fr;
       gap: 20px;
       width: 90%;
     }
@@ -110,35 +117,40 @@
       font-size: 1.5rem;
     }
     .footer {
-      margin-top: 40px;
+      margin-top: auto;
     }
   }
 </style>
 
 <body>
-
   <header>
     <img src="logo_white_nous.png" alt="Logo Nous">
     <h1>PAINÉIS DA PRODUÇÃO – <b>ARIZONA SOLADOS</b></h1>
   </header>
 
-  <div class="grid">
-    <a class="card" href="acabamento1.html" target="_blank" rel="noopener noreferrer">
-      <h2>Acabamento 1</h2>
-    </a>
-    <a class="card" href="acabamento2.html" target="_blank" rel="noopener noreferrer">
-      <h2>Acabamento 2</h2>
-    </a>
-    <a class="card" href="acabamento3.html" target="_blank" rel="noopener noreferrer">
-      <h2>Acabamento 3</h2>
-    </a>
-    <a class="card" href="acabamento4.html" target="_blank" rel="noopener noreferrer">
-      <h2>Acabamento 4</h2>
+  <!-- Botão principal centralizado ocupando 2 colunas 
+  <div class="grid section">
+    <a class="card main-button" href="acabamentos_e_injetoras.html" target="_blank" rel="noopener noreferrer">
+      <h2>Acabamentos e Injetoras</h2>
     </a>
   </div>
+  -->
 
-  <div class="footer">
-    © Nous Tecnologia e Consultoria • Atualizado automaticamente
+  <!-- Acabamentos -->
+  <div class="grid section">
+    <a class="card" href="acabamento1.html" target="_blank" rel="noopener noreferrer"><h2>Acabamento 1</h2></a>
+    <a class="card" href="acabamento2.html" target="_blank" rel="noopener noreferrer"><h2>Acabamento 2</h2></a>
+    <a class="card" href="acabamento3.html" target="_blank" rel="noopener noreferrer"><h2>Acabamento 3</h2></a>
+    <a class="card" href="acabamento4.html" target="_blank" rel="noopener noreferrer"><h2>Acabamento 4</h2></a>
   </div>
 
+  <!-- Injetoras (com espaço reduzido em relação à seção acima) -->
+  <div class="grid section compact">
+    <a class="card" href="injetora1.html" target="_blank" rel="noopener noreferrer"><h2>Injetora 1</h2></a>
+    <a class="card" href="injetora2.html" target="_blank" rel="noopener noreferrer"><h2>Injetora 2</h2></a>
+    <a class="card" href="injetora3.html" target="_blank" rel="noopener noreferrer"><h2>Injetora 3</h2></a>
+    <a class="card" href="injetora4.html" target="_blank" rel="noopener noreferrer"><h2>Injetora 4</h2></a>
+  </div>
+
+  <div class="footer">© Nous Tecnologia e Consultoria • Atualizado automaticamente</div>
 </body>
